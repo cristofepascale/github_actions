@@ -4,7 +4,7 @@ on: workflow_dispatch
 
 env:
   DAY_OF_WEEK: Lundi ## Variable d'environnement pour l'ensemble du flux de travail
-  var_sec: ${{ VAR_SEC }}
+  var_sec: ${{ secrets.VAR_SEC }}
 
 jobs:
   greeting_job:
@@ -15,7 +15,7 @@ jobs:
       - name: "Dites Salut Mona nous sommes lundi"
         run: echo "$Greeting $First_Name. Nous sommes $DAY_OF_WEEK! La val de VAR_SEC est $var_sec et la valeur de VAR_SEC2 est $var_sec2"
         with: # Set the secret as an input
-          var_sec2: ${{ VAR_SEC2 }}
+          var_sec2: ${{ secretes.VAR_SEC2 }}
         env:
           First_Name: Mona ## Variable d'environnement uniquement pour l'étape "Dites Salut Mona nous sommes lundi" de la tâche "greeting_job"
 
