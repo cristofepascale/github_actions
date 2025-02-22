@@ -12,6 +12,7 @@ jobs:
     env:
       Greeting: Salut ## Variable d'environnement pour la tâche
     steps:
+      - shell: bash
       - name: "Dites Salut Mona nous sommes lundi"
         with: # Set the secret as an input
           var_sec2: ${{ secrets.VAR_SEC2 }}
