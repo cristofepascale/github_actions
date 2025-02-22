@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: "Dites Salut Mona nous sommes lundi"
         shell: bash
-        var_sec2: ${{ secrets.VAR_SEC2 }}
+#        var_sec2: ${{ secrets.VAR_SEC2 }}
         env:
           First_Name: Mona ## Variable d'environnement uniquement pour l'étape "Dites Salut Mona nous sommes lundi" de la tâche "greeting_job"
         run: echo "$Greeting $First_Name. Nous sommes $DAY_OF_WEEK! La val de VAR_SEC est $var_sec et la valeur de VAR_SEC2 est $var_sec2"
