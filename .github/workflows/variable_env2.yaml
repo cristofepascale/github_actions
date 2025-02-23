@@ -23,4 +23,4 @@ jobs:
           ls -a
           git add .
           git commit -m "random file from action"
-         git push
+          git push
