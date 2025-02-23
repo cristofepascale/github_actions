@@ -7,6 +7,19 @@ jobs:
     permissions:
       contents: write
     steps:
+      - name: Checkout on master
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@master
+        with:
+          python-version: '3.x'
+          architecture: 'x64'
+
+      - name: Install pytest and flake8
+        run: |
+          pip install pytest
+
       - name: Push a file to our repository
         run: |
           pwd
