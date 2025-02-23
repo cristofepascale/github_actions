@@ -1,6 +1,10 @@
 name: Variable 2 telechargement fichier
 on: push
 
+jobs:
+  qa:
+    name: Create commit and push file on my repository
+
 create_commit:
   runs-on: ubuntu-latest
   permissions:
