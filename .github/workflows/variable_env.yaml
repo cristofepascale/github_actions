@@ -4,17 +4,18 @@ on: workflow_dispatch
 
 env:
   DAY_OF_WEEK: Lundi ## Variable d'environnement pour l'ensemble du flux de travail
-  var_sec: ${{ secrets.VAR_SEC }}
   var_sec2: ${{ secrets.VAR_SEC2 }}
 
 jobs:
   greeting_job:
     runs-on: ubuntu-latest
     env:
+      var_sec: ${{ secrets.VAR_SEC }}
       Greeting: Salut ## Variable d'environnement pour la tâche
     steps:
       - name: "Dites Salut Mona nous sommes lundi"
         shell: bash
+              if [ $var_sec = "Secret value"]; then echo "VAR_SEC : OK"; fi
 #        var_sec2: ${{ secrets.VAR_SEC2 }}
         env:
           First_Name: Mona ## Variable d'environnement uniquement pour l'étape "Dites Salut Mona nous sommes lundi" de la tâche "greeting_job"
